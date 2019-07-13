@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "cd2ca7cb-d3be-499b-9448-db9a74ff175f",
+		"name": "Node-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"123456\",\n\t\"firstName\": \"Test\",\n\t\"lastName\": \"User\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"renmoney@email.com\",\n\t\"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Get Available Loans",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/loan/available-loans",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								"available-loans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apply Loan",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"loanId\": \"b0432f7a-9974-48aa-b264-a032abe0f001\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/api/loan/apply",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"loan",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

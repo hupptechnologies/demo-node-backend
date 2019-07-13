@@ -1,6 +1,7 @@
 'use strict';
 
 const uuidv4 = require('uuid/v4');
+const moment = require('moment');
 
 let loans = [];
 let appliedLoans = [];
@@ -29,7 +30,53 @@ module.exports = {
 			}
 		]
 	},
-	populateAppliedLoans: () =>{
-		
+	populateAppliedLoans: () => {
+		appliedLoans = [
+			{
+				createdAt: moment().toISOString(),
+				isApproved: true,
+				status: 'active',
+				userId: '8af49b4d-9392-47d5-af4c-e0ee921e9f0d',
+				loanId: '8884918b-3e77-4250-946a-2f1d03a5318c',
+				startAt: moment().toISOString(),
+				endAt: moment().add(18, 'months').toISOString()
+			},
+			{
+				createdAt: moment().toISOString(),
+				isApproved: true,
+				status: 'active',
+				userId: 'f17dbc08-cdc4-47c8-a96b-494ea6d6bf0c',
+				loanId: 'b0432f7a-9974-48aa-b264-a032abe0f001',
+				startAt: moment().toISOString(),
+				endAt: moment().add(3, 'months').toISOString()
+			}
+		]
+	},
+	applyLoan: (userId, loanId, callback) => {
+		let appliedloan = appliedLoans.find((x) => x.loanId === loanId);
+
+		if (appliedloan) {
+			// Remain to handle
+			callback(false);
+		}else {
+			let loan = loans.find((x) => x.id === loanId);
+
+			let payload = {
+				createdAt: moment().toISOString(),
+				isApproved: true,
+				status: 'active',
+				userId: 'f17dbc08-cdc4-47c8-a96b-494ea6d6bf0c',
+				loanId: 'b0432f7a-9974-48aa-b264-a032abe0f001',
+				startAt: moment().toISOString(),
+				endAt: moment().add(loan.tenture, 'months').toISOString()
+			}
+
+			appliedLoans.push(payload);
+
+			callback(true);
+		}
+	},
+	getLoanById: (loanId) => {
+		return loans.find((x) => x.id === loanId);
 	}
 };

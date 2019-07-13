@@ -6,4 +6,6 @@ const { tokenValidator } = require('../utils');
 
 router.get('/available-loans', tokenValidator, loan.getAvailableLoans);
 
+router.post('/apply', [tokenValidator, loan.validate('applyloan')], loan.applyLoan);
+
 module.exports = router;
