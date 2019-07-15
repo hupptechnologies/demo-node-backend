@@ -22,10 +22,6 @@
 			"warn",
 			"single"
 		],
-		"semi": [
-			"error",
-			"always"
-		],
 		"no-var": [
 			"error"
 		],
