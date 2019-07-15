@@ -16,4 +16,4 @@
 ### ToDo
 
 - [x] Ensure the users are able to apply as many different loans as they want but the loans must not be withing same period.
-- [ ] Unit testing.
+- [X] Unit testing.

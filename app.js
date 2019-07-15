@@ -31,3 +31,6 @@ app.listen(process.env.PORT, function(err) {
 		loanService.populateLoans();
 	}
 });
+
+// Export our app for testing purposes
+module.exports = app
