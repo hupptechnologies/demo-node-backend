@@ -30,7 +30,7 @@ module.exports = {
 			{
 				firstName: 'Kia',
 				lastName: 'Kia',
-				email: "kia@email.com",
+				email: 'kia@email.com',
 				password: '$2b$04$qjYcf2CjaWOHcnk.dKJbJ.6njCJjiAYczpxnnTokImSseeDhpbFoW',
 				id: 'f17dbc08-cdc4-47c8-a96b-494ea6d6bf0c'
 			}
